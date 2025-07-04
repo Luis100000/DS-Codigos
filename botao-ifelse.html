@@ -21,3 +21,41 @@ Com isso, o programa ignora o bloco if e executa o que está dentro do bloco els
 A cor de fundo do botão volta para azul.
 
 O texto exibido no botão é alterado para "Agora sou Azul!".
+
+
+
+<html>
+<head>
+<title>Se-Então Simples no Botão</title>
+<style>
+#meuBotaoSimples {
+padding: 10px 20px;
+font-size: 16px;
+background-color: green; /* Cor inicial */
+color: white;
+border: none;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+<button id="meuBotaoSimples">Clique para Mudar a Cor</button>
+<script>
+// 1. Pega uma referência ao botão
+var botao = document.getElementById('meuBotaoSimples');
+// 2. Adiciona um "ouvinte" para o evento de clique (click)
+botao.addEventListener('click', function() {
+// 3. Verifica a condição (estrutura 'se-então')
+if (botao.style.backgroundColor === 'green') {
+// Se a cor for verde, muda para roxo
+botao.style.backgroundColor = 'purple';
+botao.textContent = 'Agora sou Roxo!';
+} else {
+// Senão (se não for verde), muda para verde
+botao.style.backgroundColor = 'green';
+botao.textContent = 'Agora sou Verde!';
+}
+});
+</script>
+</body>
+</html>
