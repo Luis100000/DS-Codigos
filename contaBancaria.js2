@@ -1,0 +1,23 @@
+class ContaBancaria {
+  constructor(saldo = 0) {
+    this.saldo = saldo;
+  }
+
+  depositar(valor) {
+    this.saldo += valor;
+  }
+
+  sacar(valor) {
+    if (this.saldo >= valor) {
+      this.saldo -= valor;
+    } else {
+      console.log("Saldo insuficiente");
+    }
+  }
+}
+
+// 1. Alteração do saldo inicial para 80
+const minhaConta = new ContaBancaria(80); 
+
+// 2. Alteração do valor do saque para 55
+minhaConta.sacar(55);
