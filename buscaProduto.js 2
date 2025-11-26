@@ -1,0 +1,41 @@
+/**
+ * Busca um produto em uma lista de objetos pelo nome.
+ * * @param {Array<Object>} produtos - A lista de produtos, onde cada um tem nome e preco.
+ * @param {string} nomeBuscado - O nome do produto que se deseja encontrar.
+ * @returns {Object|null} O objeto do produto correspondente ou null se não for encontrado.
+ */
+function buscarProduto(produtos, nomeBuscado) {
+  // 1. Utiliza uma estrutura de repetição (for...of) para percorrer a lista
+  for (const produto of produtos) {
+    // 2. A comparação é feita com base na propriedade 'nome'
+    if (produto.nome === nomeBuscado) {
+      // 3. Retorna o objeto completo do produto se encontrado
+      return produto;
+    }
+  }
+
+  // 4. Se o loop terminar e o produto não for encontrado, retorna null
+  return null;
+}
+
+// ------------------------------------
+// Exemplo de Uso
+// ------------------------------------
+
+// Lista de produtos para percorrer
+const listaDeProdutos = [
+  { nome: "Smartphone", preco: 1500 },
+  { nome: "Notebook", preco: 4200 },
+  { nome: "Teclado Mecânico", preco: 350 },
+  { nome: "Mouse sem fio", preco: 120 }
+];
+
+// 1. Teste de Busca Bem-Sucedida
+const produtoEncontrado = buscarProduto(listaDeProdutos, "Notebook");
+console.log("--- Busca 1: Notebook ---");
+console.log(produtoEncontrado);
+
+// 2. Teste de Busca Sem Sucesso
+const produtoNaoEncontrado = buscarProduto(listaDeProdutos, "Webcam");
+console.log("--- Busca 2: Webcam ---");
+console.log(produtoNaoEncontrado);
